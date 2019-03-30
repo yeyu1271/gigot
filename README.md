@@ -4,9 +4,7 @@
 
 ## 目录结构
 
-目录结构采用分层设计，主体分为 client 和 server 两部分，即 client 对应前端工程，server 对应服务端工程，提供 RESTful API 和 client 端进行数据通信；脚手架默认只提供最简的的 RESTful API 接口，因为在实际场景中，Node 层可能只是用来作为微服务架构中的 API 转发层，并不需要 ORM、数据库等功能。但可以通过插件化来进行支持，在创建项目的时候进行自定义选择生成项目的类型。
-
-在实际项目中，你也可以根据实际需求自定义自己的目录规范，但需要符合 Iceworks 的 基本规范，以确保能使用 Iceworks 新建页面和启动服务。如在一些工程中会有 client、admin、server 三个目录，client 对应客户端系统，admin 对应后台管理系统，server 作为服务端的 API 分发。
+目录结构采用分层设计，主体分为 client 和 server 两部分，即 client 对应前端工程，server 对应服务端工程
 
 
 ```
