@@ -1,6 +1,7 @@
 import Container from '@icedesign/container';
 import React, { Component } from 'react';
 import fecha from 'fecha';
+import { Link } from 'react-router-dom';
 
 // import { Pagination } from '@alifd/next';
 
@@ -19,7 +20,7 @@ class NoticeList extends Component {
       dataSource: Array.from({ length: 15 }).map(() => {
         return {
           title: mokeDataTitle[Math.floor(Math.random() * 4)],
-          url: '#',
+          url: `/article/content/${Math.floor(Math.random() * 10)}`,
           top: Math.random() > 0.5,
           hot: Math.random() > 0.5,
           new: Math.random() > 0.5,
@@ -51,11 +52,11 @@ class NoticeList extends Component {
         <div>
           {this.state.dataSource.map((notice, index) => {
             return (
-              <a
+              <Link
                 key={index}
                 target="_self"
                 title={notice.title}
-                href={notice.url}
+                to={notice.url}
                 style={styles.noticeItem}
               >
                 <div>
@@ -67,7 +68,7 @@ class NoticeList extends Component {
                 <span style={styles.time}>
                   {fecha.format(notice.time, 'MMMM Do YYYY')}
                 </span>
-              </a>
+              </Link>
             );
           })}
           {/* <div style={{ textAlign: 'right', paddingTop: 20 }}>

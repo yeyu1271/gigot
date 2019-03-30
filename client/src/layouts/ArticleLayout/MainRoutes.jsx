@@ -22,7 +22,7 @@ class MainRoutes extends Component {
             ) : null;
           })}
           {/* 默认重定向主页 */}
-          <Redirect from="/article" to="/article/content" />
+          <Redirect from="/article" to="/article/content/:id" />
           {/* 找不到页面 */}
           <Route component={NotFound} />
         </Switch>

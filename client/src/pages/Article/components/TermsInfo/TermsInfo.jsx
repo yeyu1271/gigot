@@ -43,6 +43,14 @@ export default class TermsInfo extends Component {
     };
   }
 
+  componentDidMount() {
+    // eslint-disable-next-line react/no-did-mount-set-state
+    console.log(this.props);
+
+    // this.setState({
+    // });
+  }
+
   render() {
     return (
       <IceContainer>

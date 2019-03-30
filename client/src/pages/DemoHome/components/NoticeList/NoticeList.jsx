@@ -1,7 +1,9 @@
 import Container from '@icedesign/container';
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import fecha from 'fecha';
 import './NoticeList.scss';
+
 // import { Pagination } from '@alifd/next';
 
 const mokeDataTitle = [
@@ -19,7 +21,7 @@ class NoticeList extends Component {
       dataSource: Array.from({ length: 6 }).map(() => {
         return {
           title: mokeDataTitle[Math.floor(Math.random() * 4)],
-          url: '#',
+          url: `/article/content/${Math.floor(Math.random() * 10)}`,
           top: Math.random() > 0.5,
           hot: Math.random() > 0.5,
           new: Math.random() > 0.5,
@@ -29,7 +31,8 @@ class NoticeList extends Component {
     };
   }
 
-/*   handleChange = () => {
+
+  /*   handleChange = () => {
     this.setState({
       dataSource: Array.from({ length: 6 }).map(() => {
         return {
@@ -60,11 +63,11 @@ class NoticeList extends Component {
         <div>
           {this.state.dataSource.map((notice, index) => {
             return (
-              <a
+              <Link
                 key={index}
                 target="_self"
                 title={notice.title}
-                href={notice.url}
+                to={notice.url}
                 style={styles.noticeItem}
               >
                 <div>
@@ -76,9 +79,10 @@ class NoticeList extends Component {
                 <span style={styles.time}>
                   {fecha.format(notice.time, 'MMMM Do YYYY ')}
                 </span>
-              </a>
+              </Link>
             );
           })}
+          <Link to="/main/file" style={styles.noticeItem}>更多文章</Link>
           {/* <div style={{ textAlign: 'right', paddingTop: 20 }}>
             <Pagination onChange={this.handleChange} />
           </div> */}

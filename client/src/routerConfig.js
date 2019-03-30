@@ -99,7 +99,7 @@ const routerConfig = [
     component: File,
   },
   {
-    path: '/article/content',
+    path: '/article/content/:id',
     component: Article,
   },
 ];
